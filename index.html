@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App Base + Farcaster (Simples)</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.9.0/dist/ethers.min.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; max-width:900px; margin:40px auto; padding:0 20px; }
+    button { padding:8px 12px; margin:6px 0; }
+    pre { background:#f6f8fa; padding:10px; border-radius:6px; overflow:auto; }
+    header { display:flex; gap:12px; align-items:center; }
+    .card { border:1px solid #e6e9ee; padding:14px; border-radius:8px; margin-top:12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>App Base + Farcaster (Simples)</h1>
+    <small>Demo — Andre</small>
+  </header>
+
+  <p>Este app demonstra duas funcionalidades simples:</p>
+  <ol>
+    <li>Conectar carteira com MetaMask / Wallet (rede Base).</li>
+    <li>Buscar um perfil público do Farcaster (usando a API pública, se disponível).</li>
+  </ol>
+
+  <div class="card">
+    <h3>1) Conexão com carteira (Base)</h3>
+    <div>
+      <button id="connectBtn">Conectar carteira</button>
+      <button id="switchBaseBtn">Solicitar troca para Base (chainId 8453)</button>
+    </div>
+    <div id="walletInfo"></div>
+    <pre id="balance"></pre>
+  </div>
+
+  <div class="card">
+    <h3>2) Consultar perfil Farcaster</h3>
+    <p>Digite um username (ex: <code>alice</code>) ou um fid (número) e clique em Buscar.</p>
+    <input id="fcInput" placeholder="username ou fid" />
+    <button id="fcSearchBtn">Buscar Farcaster</button>
+    <pre id="fcResult">Resultado aparecerá aqui.</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
